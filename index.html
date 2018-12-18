@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <section>
+    <div class="grid-container">
+  
+      <div class="menu-icon">
+        <span>ícono</span>
+      </div>
+  
+      <header class="header">
+        <div class="header__search">Search...</div>
+        <div class="header__avatar">Your face</div>
+      </header>
+  
+      <aside class="sidenav" :class="{'active' : displaySidenav}">
+  
+        <div class="sidenav__close-icon">
+          <span>ícono</span>
+        </div>
+  
+        <ul class="sidenav__list">
+          <li class="sidenav__list-item">Usuarios</li>
+          <li class="sidenav__list-item">Proyectos</li>
+          <li class="sidenav__list-item">Operadores</li>
+          <li class="sidenav__list-item">Movimientos</li>
+          <li class="sidenav__list-item">Inversiones</li>
+        </ul>
+      </aside>
+  
+      <main class="main">
+        <!-- <div class="main-header">
+            <div class="main-header__heading">Hello User</div>
+            <div class="main-header__updates">Recent Items</div>
+          </div>
+  
+          <div class="main-overview">
+            <div class="overviewcard">
+              <div class="overviewcard__icon">Overview</div>
+              <div class="overviewcard__info">Card</div>
+            </div>
+            <div class="overviewcard">
+              <div class="overviewcard__icon">Overview</div>
+              <div class="overviewcard__info">Card</div>
+            </div>
+            <div class="overviewcard">
+              <div class="overviewcard__icon">Overview</div>
+              <div class="overviewcard__info">Card</div>
+            </div>
+            <div class="overviewcard">
+              <div class="overviewcard__icon">Overview</div>
+              <div class="overviewcard__info">Card</div>
+            </div>
+          </div>
+  
+          <div class="main-cards">
+            <div class="card">Card</div>
+            <div class="card">Card</div>
+            <div class="card">Card</div>
+          </div> -->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4">
+              <div>
+                <label for="post">Publicar</label>
+                <select name="post" id="">
+                  <option value="no">No</option>
+                  <option value="yes">Sí</option>
+                </select>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-6 col-md-offset-2 control-label">Frecuencia de pago</label>
+                <div class="col-md-4">
+                  <select name="payment_frequency" class="form-control">
+                    <option value="66">Al Plazo</option>
+                    <option value="63">Quincenal</option>
+                    <option value="74">Semestral</option>
+                    <option value="64">Mensual</option>
+                    <option value="73">Anual</option>
+                    <option value="75">Bimestral</option>
+                    <option value="65">Trimestral</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-6 col-md-offset-0 control-label">Cálculo de rendimiento</label>
+                <div class="col-md-6">
+                  <select name="performance_calculation" class="form-control">
+                    <option value="bienes-raices">Bienes Raíces o Inbera o Tribus</option>
+                    <option value="credilikeme">Exclusivo Credilikeme</option>
+                    <option value="factoraje">Factoraje</option>
+                    <option value="pyme-p2p">Préstamo Pyme o P2P</option>
+                    <option value="weeshing">Exclusivo Weeshing</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div>
+                    <label for="investment_type">Tipo de inversión</label>
+                    <select name="investment_type" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                      <option value="1">Préstamos P2P</option>
+                      <option value="2">Bienes Raíces</option>
+                      <option value="3">Préstamos PYMES</option>
+                      <option value="4">Factoraje</option>
+                      <option value="56">Proyectos Exclusivos</option>
+                      <option value="61">Otros</option>
+                      <option value="78">Eventos</option>
+                      <option value="80">Energía </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div>
+                    <label for="minimal_investment_amount">Inversión mínima</label>
+                    <select name="minimal_investment_amount" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                      <option v-for="i in 100" :key="i" :value="i*1000">${{ i*1000 }}</option>
+                    </select>
+                    <label for="multiple_amount">Múltiplo de Inversión</label>
+                    <select name="multiple_amount" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                      <option v-for="i in 400" :key="i" :value="i*250">${{ i*250 }}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-3 control-label">Nombre</label>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="name" value="">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-3 control-label">Monto Total</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control convert-peso" mirror="true" reference="target_amount" value="" money="peso">
+                  <input type="hidden" name="target_amount" value="">
+                </div>
+  
+                <label class="col-md-3 control-label">Monto Actual</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control convert-peso" mirror="true" reference="current_amount" value="" money="peso">
+                  <input type="hidden" name="current_amount" value="">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-3 control-label">Completado (%)</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" name="percentage_of_completion" percent="true" value="">
+                </div>
+  
+                <label class="col-md-3 control-label">Fecha Límite</label>
+                <div class="col-md-3">
+                  <input id="datetimepicker" type="text" class="form-control" name="limit_date" value="">
+                </div>
+              </div>
+              <div class="row sin-margin">
+  
+                <label class="col-md-3 control-label">Número de pagos</label>
+                <div class="col-md-3 m-bottom-10">
+                  <input type="text" class="form-control" name="payments_number" number="true" value="">
+                </div>
+  
+  
+                <label class="col-md-3 control-label">Plazo</label>
+                <div class="col-md-3 m-bottom-10">
+  
+                  <div class="row">
+  
+                    <div class="col-md-6 padding-right-0">
+  
+                      <input type="text" class="form-control" name="time_value" number="true" value="">
+  
+                    </div>
+  
+                    <div class="col-md-6 padding-left-0">
+                      <select name="time_type" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                        <option value="days" selected="">Días</option>
+                        <option value="months">Meses</option>
+                      </select>
+                      
+                      <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 84px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-time_type-0i-container"><span class="select2-selection__rendered" id="select2-time_type-0i-container" title="Días">Días</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span>
+                      <span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row sin-margin">
+                <label class="col-md-3 control-label">Tasa Rendimiento (%)</label>
+                <div class="col-md-3 m-bottom-10">
+                  <input type="text" class="form-control" name="yield_rate" percent="true" value="">
+                </div>
+                <label class="col-md-3 control-label">Calificación de Riesgo</label>
+                <div class="col-md-3 m-bottom-10">
+                  <input type="text" class="form-control" name="investment_risk_id">
+                </div>
+  
+                <div class="row sin-margin">
+  
+                  <label class="col-md-3 control-label">Rendimiento al plazo</label>
+                  <div class="col-md-3">
+                    <input type="text" class="form-control" name="yield_to_term" percent="true" value="">
+                  </div>
+  
+                  <label class="col-md-3 control-label">Posibilidad de prepago</label>
+                  <div class="col-md-3">
+                    <select name="is_prepayment_possibility" class="form-control">
+                      <option value="no">No</option>
+                      <option value="yes">Si</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <label class="col-md-3 control-label">Plataforma</label>
+              <div class="col-md-9 m-bottom-10">
+                <select name="company_id" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                  <option value="1">Yotepresto</option>
+                  <option value="3">Expansive</option>
+                  <option value="4">Prestadero</option>
+                  <option value="5">Briq</option>
+                  <option value="6">Konsigue</option>
+                  <option value="7">Inbera</option>
+                  <option value="8">Doopla</option>
+                  <option value="9">Credilikeme</option>
+                  <option value="10">LenMi</option>
+                  <option value="11">Red Girasol</option>
+                  <option value="12">Zigo</option>
+                  <option value="13">Tribus Capital</option>
+                  <option value="14">Weeshing México</option>
+                  <option value="15">Fincea</option>
+                  <option value="16">M2Crowd</option>
+                  <option value="17">Pitchbull</option>
+                  <option value="18">Aliados</option>
+                  <option value="19">DLS</option>
+                  <option value="20">LUMIO SEM </option>
+                  <option value="21">Wave</option>
+                  <option value="22">Mutuo</option>
+                  <option value="23">Cumplo</option>
+                  <option value="24">Weeshing Chile</option>
+                  <option value="25">Facturas</option>
+                  <option value="26">Hurra Credit</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <label class="col-md-3 control-label">Link del proyecto</label>
+              <div class="col-md-9 m-bottom-10">
+                <input type="text" class="form-control" name="solvency" value="">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div>
+                <label for="retention">Retención</label>
+                <input type="number" name="retention" placeholder="puede dejarse vacio" id="">
+              </div>
+              <div>
+                <label for="investment-multiples">Múltiplos de inversión</label>
+                <input type="number" name="investment-multiples" id="">
+              </div>
+              <div>
+                <label for="payment-type">Tipo de pago</label>
+                <select name="payment-type" id="">
+                  <option value="insoluto">Insoluto</option>
+                  <option value="yield">Rendimiento</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div>
+                <label for="next-payment">Próximo pago</label>
+                <input type="text" name="next-payment" id="">
+              </div>
+              <div>
+                <label for="funding-type">Tipos de fondeo</label>
+                <select name="funding-type" id="">
+                  <option value="KIA">KIA</option>
+                  <option value="AON">AON</option>
+                </select>
+              </div>
+              <div>
+                <label for="warranty">Garantía</label>
+                <input type="text" name="warranty" id="">
+              </div>
+              <div>
+                <label for="iva">IVA</label>
+                <input type="text" name="iva" id="" placeholder="Se puede dejar vacío">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <label for="project-description">Descripción del proyecto</label>
+              <textarea name="project-description" id="" cols="100" rows="10"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <button>Crear</button>
+          </div>
+        </div>
+      </main>
+  
+      <footer class="footer">
+        <div class="footer__copyright">&copy; 2018 MTH</div>
+        <div class="footer__signature">Con ❤️ para el team de operaciones</div>
+      </footer>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

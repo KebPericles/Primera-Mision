@@ -130,11 +130,15 @@
                     <select name="minimal_investment_amount" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                       <option v-for="i in 100" :key="i" :value="i*1000">${{ i*1000 }}</option>
                     </select>
-                    <label for="multiple_amount">Múltiplo de Inversión</label>
-                    <select name="multiple_amount" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                      <option v-for="i in 400" :key="i" :value="i*250">${{ i*250 }}</option>
-                    </select>
                   </div>
+                </div>
+              </div>
+              <div class="row justify-content-end">
+                <div class="col-lg-6">
+                  <label for="multiple_amount">Múltiplo de Inversión</label>
+                  <select name="multiple_amount" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                    <option v-for="i in 400" :key="i" :value="i*250">${{ i*250 }}</option>
+                  </select>
                 </div>
               </div>
               <div class="form-group row">

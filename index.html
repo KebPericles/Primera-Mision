@@ -68,22 +68,26 @@
           </div> -->
         <div class="container">
           <br>
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="form-group row">
-                <div class="col-lg-4">
-                  <label for="post">Publicar</label>
-                </div>
-                <div class="col-lg-8"> 
-                  <select name="post" id="">
-                    <option value="no">No</option>
-                    <option value="yes">Sí</option>
-                  </select>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="form-group row">
+                  <div class="col-md-3 col-md-offset-2">
+                    <label for="post">Publicar</label>
+                  </div>
+                  <div class="col-md-4"> 
+                    <select name="post" id="">
+                      <option value="no">No</option>
+                      <option value="yes">Sí</option>
+                    </select>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div class="container-auto">
               <div class="form-group row">
-                <label class="col-md-4 col-md-offset-2 control-label">Frecuencia de pago</label>
-                <div class="col-md-8">
+                <label class="col-md-3 col-md-offset-2 control-label">Frecuencia de pago</label>
+                <div class="col-md-4">
                   <select name="payment_frequency" class="form-control">
                     <option value="66">Al Plazo</option>
                     <option value="63">Quincenal</option>
@@ -96,8 +100,8 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-md-4 col-md-offset-0 control-label">Cálculo de rendimiento</label>
-                <div class="col-md-8">
+                <label class="col-md-3 col-md-offset-0 control-label">Cálculo de rendimiento</label>
+                <div class="col-md-4">
                   <select name="performance_calculation" class="form-control">
                     <option value="bienes-raices">Bienes Raíces o Inbera o Tribus</option>
                     <option value="credilikeme">Exclusivo Credilikeme</option>
@@ -108,24 +112,22 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-8">
+            <div class="container">
               <div class="row">
-                <div class="col-lg-6">
-                  <div>
-                    <label for="investment_type">Tipo de inversión</label>
-                    <select name="investment_type" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                      <option value="1">Préstamos P2P</option>
-                      <option value="2">Bienes Raíces</option>
-                      <option value="3">Préstamos PYMES</option>
-                      <option value="4">Factoraje</option>
-                      <option value="56">Proyectos Exclusivos</option>
-                      <option value="61">Otros</option>
-                      <option value="78">Eventos</option>
-                      <option value="80">Energía </option>
-                    </select>
-                  </div>
+                <div class="col-md-4">
+                  <label for="investment_type">Tipo de inversión</label>
+                  <select name="investment_type" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                    <option value="1">Préstamos P2P</option>
+                    <option value="2">Bienes Raíces</option>
+                    <option value="3">Préstamos PYMES</option>
+                    <option value="4">Factoraje</option>
+                    <option value="56">Proyectos Exclusivos</option>
+                    <option value="61">Otros</option>
+                    <option value="78">Eventos</option>
+                    <option value="80">Energía </option>
+                  </select>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-md-4">
                   <div>
                     <label for="minimal_investment_amount">Inversión mínima</label>
                     <select name="minimal_investment_amount" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
@@ -133,17 +135,18 @@
                     </select>
                   </div>
                 </div>
-              </div>
-              <div class="row justify-content-end">
-                <div class="col-lg-6">
+                <div class="col-md-4">
                   <label for="multiple_amount">Múltiplo de Inversión</label>
                   <select name="multiple_amount" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                     <option v-for="i in 400" :key="i" :value="i*250">${{ i*250 }}</option>
                   </select>
                 </div>
               </div>
-              <br>
-              <br>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col">
               <div class="form-group row">
                 <label class="col-md-3 control-label">Nombre</label>
                 <div class="col-md-9">
@@ -156,7 +159,6 @@
                   <input type="text" class="form-control convert-peso" mirror="true" reference="target_amount" value="" money="peso">
                   <input type="hidden" name="target_amount" value="">
                 </div>
-  
                 <label class="col-md-3 control-label">Monto Actual</label>
                 <div class="col-md-3">
                   <input type="text" class="form-control convert-peso" mirror="true" reference="current_amount" value="" money="peso">
@@ -168,37 +170,27 @@
                 <div class="col-md-3">
                   <input type="text" class="form-control" name="percentage_of_completion" percent="true" value="">
                 </div>
-  
                 <label class="col-md-3 control-label">Fecha Límite</label>
                 <div class="col-md-3">
                   <input id="datetimepicker" type="text" class="form-control" name="limit_date" value="">
                 </div>
               </div>
-              <div class="row sin-margin">
-  
+              <div class="row sin-margin">  
                 <label class="col-md-3 control-label">Número de pagos</label>
                 <div class="col-md-3 m-bottom-10">
                   <input type="text" class="form-control" name="payments_number" number="true" value="">
                 </div>
-  
-  
                 <label class="col-md-3 control-label">Plazo</label>
                 <div class="col-md-3 m-bottom-10">
-  
                   <div class="row">
-  
                     <div class="col-md-6 padding-right-0">
-  
                       <input type="text" class="form-control" name="time_value" number="true" value="">
-  
                     </div>
-  
                     <div class="col-md-6 padding-left-0">
                       <select name="time_type" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                         <option value="days" selected="">Días</option>
                         <option value="months">Meses</option>
-                      </select>
-                      
+                      </select>    
                       <span class="select2 select2-container select2-container--default" dir="ltr" style="width: 84px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-time_type-0i-container"><span class="select2-selection__rendered" id="select2-time_type-0i-container" title="Días"></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span>
                       <span class="dropdown-wrapper" aria-hidden="true"></span></span>
                     </div>
@@ -215,28 +207,26 @@
                 <div class="col-md-3 m-bottom-10">
                   <input type="text" class="form-control" name="investment_risk_id">
                 </div>
-  
-                <div class="row sin-margin">
-  
-                  <label class="col-md-3 control-label">Rendimiento al plazo</label>
-                  <div class="col-md-3">
-                    <input type="text" class="form-control" name="yield_to_term" percent="true" value="">
-                  </div>
-  
-                  <label class="col-md-3 control-label">Posibilidad de prepago</label>
-                  <div class="col-md-3">
-                    <select name="is_prepayment_possibility" class="form-control">
-                      <option value="no">No</option>
-                      <option value="yes">Si</option>
-                    </select>
-                  </div>
+                <br>
+                <br>
+                <label class="col-md-3 control-label">Rendimiento al plazo</label>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" name="yield_to_term" percent="true" value="">
+                </div>    
+                <label class="col-md-3 control-label">Posibilidad de prepago</label>
+                <div class="col-md-3">
+                  <select name="is_prepayment_possibility" class="form-control">
+                    <option value="no">No</option>
+                    <option value="yes">Si</option>
+                  </select>
                 </div>
               </div>
             </div>
           </div>
+          <br>
           <div class="row">
-            <div class="col-md-4">
-              <label class="col-md-3 control-label">Plataforma</label>
+            <div class="col">
+              <label class="col-lg-4 control-label">Plataforma</label>
               <div class="col-md-9 m-bottom-10">
                 <select name="company_id" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                   <option value="1">Yotepresto</option>
@@ -355,7 +345,7 @@
             </div>
           </div>
           <div class="row justify-content-center">
-            <button>Crear</button>
+            <button class="crearbutton">Crear</button>
           </div>
         </div>
       </main>

@@ -181,3 +181,9 @@
     column-count: 2;
   }
 }
+.crearbutton {
+  background-color: #008CBA;
+  border-radius: 6px 6px 4px;
+  border: hidden;
+  color: white;
+}

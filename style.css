@@ -181,9 +181,47 @@
     column-count: 2;
   }
 }
+
 .crearbutton {
   background-color: #008CBA;
   border-radius: 6px 6px 4px;
   border: hidden;
   color: white;
+}
+
+.postlbl{
+  font-weight: bold;
+}
+
+.postselect{
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  border: hidden;
+  border-radius: 15px;
+  background: #569de0
+}
+
+.payment_frequencylbl{
+  font-weight: bold;
+}
+
+.payment_frequencyselect{
+  font-weight: bold;
+  color: white;
+  border: hidden;
+  border-radius: 15px;
+  background: #0d365c;
+}
+
+.performance_calculationlbl{
+  font-weight: bold;
+}
+
+.performance_calculationselect{
+  font-weight: bold;
+  color: white;
+  border: hidden;
+  border-radius: 15px;
+  background: #0d365c;
 }

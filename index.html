@@ -115,7 +115,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-4">
-                  <label for="investment_type">Tipo de inversión</label>
+                  <label class="investment_typelbl" for="investment_type">Tipo de inversión</label>
                   <select name="investment_type" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                     <option value="1">Préstamos P2P</option>
                     <option value="2">Bienes Raíces</option>
@@ -129,14 +129,14 @@
                 </div>
                 <div class="col-md-4">
                   <div>
-                    <label for="minimal_investment_amount">Inversión mínima</label>
+                    <label class="minimal_investment_amountlbl" for="minimal_investment_amount">Inversión mínima</label>
                     <select name="minimal_investment_amount" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                       <option v-for="i in 100" :key="i" :value="i*1000">${{ i*1000 }}</option>
                     </select>
                   </div>
                 </div>
                 <div class="col-md-4">
-                  <label for="multiple_amount">Múltiplo de Inversión</label>
+                  <label class="multiple_amountlbl" for="multiple_amount">Múltiplo de Inversión</label>
                   <select name="multiple_amount" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                     <option v-for="i in 400" :key="i" :value="i*250">${{ i*250 }}</option>
                   </select>
@@ -148,39 +148,39 @@
           <div class="row">
             <div class="col">
               <div class="form-group row">
-                <label class="col-md-3 control-label">Nombre</label>
+                <label class="namelbl col-md-3 control-label">Nombre</label>
                 <div class="col-md-9">
                   <input type="text" class="form-control" name="name" value="">
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-md-3 control-label">Monto Total</label>
+                <label class="target_amountlbl col-md-3 control-label">Monto Total</label>
                 <div class="col-md-3">
                   <input type="text" class="form-control convert-peso" mirror="true" reference="target_amount" value="" money="peso">
                   <input type="hidden" name="target_amount" value="">
                 </div>
-                <label class="col-md-3 control-label">Monto Actual</label>
+                <label class="col-md-3 control-label current_amountlbl">Monto Actual</label>
                 <div class="col-md-3">
                   <input type="text" class="form-control convert-peso" mirror="true" reference="current_amount" value="" money="peso">
                   <input type="hidden" name="current_amount" value="">
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-md-3 control-label">Completado (%)</label>
+                <label class="col-md-3 control-label percentage_of_completionlbl">Completado (%)</label>
                 <div class="col-md-3">
                   <input type="text" class="form-control" name="percentage_of_completion" percent="true" value="">
                 </div>
-                <label class="col-md-3 control-label">Fecha Límite</label>
+                <label class="limit_datelbl col-md-3 control-label">Fecha Límite</label>
                 <div class="col-md-3">
                   <input id="datetimepicker" type="text" class="form-control" name="limit_date" value="">
                 </div>
               </div>
               <div class="row sin-margin">  
-                <label class="col-md-3 control-label">Número de pagos</label>
+                <label class="col-md-3 payments_numberlbl control-label">Número de pagos</label>
                 <div class="col-md-3 m-bottom-10">
                   <input type="text" class="form-control" name="payments_number" number="true" value="">
                 </div>
-                <label class="col-md-3 control-label">Plazo</label>
+                <label class="col-md-3 control-label time_valuelbl">Plazo</label>
                 <div class="col-md-3 m-bottom-10">
                   <div class="row">
                     <div class="col-md-6 padding-right-0">
@@ -199,21 +199,21 @@
               </div>
               <br>
               <div class="row">
-                <label class="col-md-3 control-label">Tasa Rendimiento (%)</label>
+                <label class="col-md-3 control-label yield_ratelbl">Tasa Rendimiento (%)</label>
                 <div class="col-md-3 m-bottom-10">
                   <input type="text" class="form-control" name="yield_rate" percent="true" value="">
                 </div>
-                <label class="col-md-3 control-label">Calificación de Riesgo</label>
+                <label class="col-md-3 control-label investment_risk_idlbl">Calificación de Riesgo</label>
                 <div class="col-md-3 m-bottom-10">
                   <input type="text" class="form-control" name="investment_risk_id">
                 </div>
                 <br>
                 <br>
-                <label class="col-md-3 control-label">Rendimiento al plazo</label>
+                <label class="col-md-3 control-label yield_to_termlbl">Rendimiento al plazo</label>
                 <div class="col-md-3">
                   <input type="text" class="form-control" name="yield_to_term" percent="true" value="">
                 </div>    
-                <label class="col-md-3 control-label">Posibilidad de prepago</label>
+                <label class="col-md-3 control-label prepayment_possibilitylbl">Posibilidad de prepago</label>
                 <div class="col-md-3">
                   <select name="is_prepayment_possibility" class="form-control">
                     <option value="no">No</option>

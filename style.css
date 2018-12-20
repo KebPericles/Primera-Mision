@@ -199,7 +199,7 @@
   color: white;
   border: hidden;
   border-radius: 15px;
-  background: #569de0
+  background: #566fe0
 }
 
 .payment_frequencylbl{
@@ -225,3 +225,60 @@
   border-radius: 15px;
   background: #0d365c;
 }
+
+.investment_typelbl{
+  font-weight: bold;
+}
+
+.minimal_investment_amountlbl{
+  font-weight: bold;
+}
+
+.multiple_amountlbl{
+  font-weight: bold;
+}
+
+.namelbl{
+  font-weight: bold;
+}
+
+.target_amountlbl{
+  font-weight: bold;
+}
+
+.current_amountlbl{
+  font-weight: bold;
+}
+
+.percentage_of_completionlbl{
+  font-weight: bold;
+}
+
+.limit_datelbl{
+  font-weight: bold;
+}
+
+.payments_numberlbl{
+  font-weight: bold;
+}
+
+.time_valuelbl{
+  font-weight: bold;
+}
+
+.yield_ratelbl{
+  font-weight: bold;
+}
+
+.investment_risk_idlbl{
+  font-weight: bold;
+}
+
+.yield_to_termlbl{
+  font-weight: bold;
+}
+
+.prepayment_possibilitylbl{
+  font-weight: bold;
+}
+
